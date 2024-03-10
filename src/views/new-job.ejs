@@ -1,0 +1,157 @@
+<div class="container-md d-flex justify-content-center align-items-center">
+  <div
+    class="card bg-light text-light border border-light rounded mt-5 p-3 w-75"
+  >
+    <h1 class="mb-3 text-dark">Post a new job</h1>
+    <% errorMessages.map((error)=>{ %>
+    <div class="alert alert-danger" role="alert"><%= error.msg %></div>
+    <% }) %>
+    <form class="row g-3" action="/new-job" method="post">
+      <div class="mb-3">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="role"
+          aria-placeholder="Selecte Role"
+          required
+        >
+          <option value="">Select role</option>
+          <option value="Tech">Tech</option>
+          <option value="Non-Tech">Non-Tech</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="profile"
+          aria-placeholder="Selecte Job Profile"
+          required
+        >
+          <option value="">Select Job Profile</option>
+          <% jobProfile.map((profile)=>{ %>
+          <option value="<%= profile %>"><%= profile %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="jobLocation">Job location</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Location"
+          aria-label="jobLocation"
+          aria-describedby="jobLocation"
+          name="location"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="companyName">Company Name</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Company"
+          aria-label="companyName"
+          aria-describedby="companyName"
+          name="company"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="jobLocation">Location Type</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="On-site/ Remote / WFH"
+          aria-label="locationType"
+          aria-describedby="locationType"
+          name="locationType"
+          required
+        />
+
+        <span class="input-group-text" id="companyName">Type of Job</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Full time/ Part time"
+          aria-label="jobType"
+          aria-describedby="jobType"
+          name="jobType"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-text">Salary Range</span>
+        <input
+          type="text"
+          aria-label="Min salary"
+          class="form-control"
+          name="minSalary"
+          placeholder="Min Salary"
+          required
+        />
+        <input
+          type="text"
+          aria-label="Max salary"
+          class="form-control"
+          name="maxSalary"
+          placeholder="Max Salary"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="numberOfOpenings"
+          >Number of Openings</span
+        >
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Openings"
+          aria-label="numberOfOpenings"
+          aria-describedby="numberOfOpenings"
+          name="numberOfOpenings"
+          required
+        />
+        <span class="input-group-text" id="postingDate">Posting Date</span>
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Date"
+          aria-label="postedDate"
+          aria-describedby="postedDate"
+          name="postedDate"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <select
+          class="form-select multi-select"
+          multiple
+          aria-label="Multiple select example"
+          name="technologies"
+          title="Use ctrl + right click to select multiple options"
+          required
+        >
+          <option value="">Select Skills for this job</option>
+          <% jobSkills.map((skill)=>{ %>
+          <option value="<%= skill %>"><%= skill %></option>
+          <% }) %>
+        </select>
+        <span class="input-group-text" id="postingDate">Apply By</span>
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Last date"
+          aria-label="lastDateOfApplication"
+          aria-describedby="lastDateOfApplication"
+          name="lastDateOfApplication"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>

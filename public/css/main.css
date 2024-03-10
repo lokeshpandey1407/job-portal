@@ -1,0 +1,44 @@
+:root {
+  --primary-color: #161b7f;
+  --primary-text-color: #ed3d63;
+  --secondary-text-color: #0683d7;
+}
+body {
+  background-color: var(--primary-color);
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+}
+.main-head {
+  color: var(--primary-text-color);
+}
+.secondary-head,
+.text {
+  color: white;
+}
+.primary {
+  background-color: var(--primary-text-color);
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+.navbar {
+  background-color: var(--secondary-text-color);
+}
+.nav-link {
+  color: white;
+}
+.jobs-container {
+  background-color: var(--primary-color);
+}
+.skill {
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+}
+.skill:hover {
+  background-color: var(--secondary-text-color);
+  color: whitesmoke !important;
+}
+.multi-select option:checked {
+  background-color: var(--primary-text-color);
+  color: white;
+  font-weight: bold;
+}

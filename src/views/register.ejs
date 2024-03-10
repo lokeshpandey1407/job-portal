@@ -1,0 +1,58 @@
+<div class="container-md d-flex justify-content-center align-items-center">
+  <div
+    class="card bg-light text-light border border-light rounded mt-5 p-3 w-75"
+  >
+    <h1 class="mb-4 header text-dark">Register</h1>
+    <% errorMessages.map((error)=>{ %>
+    <div class="alert alert-danger" role="alert"><%= error.msg %></div>
+    <% }) %>
+    <form class="row g-3" action="/register" method="post">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="email">Name</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="name"
+          aria-label="name"
+          aria-describedby="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="email">Email</span>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email"
+          aria-label="email"
+          aria-describedby="email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="password">Password</span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="password"
+          aria-label="password"
+          aria-describedby="password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary mb-3">Register</button>
+      </div>
+      <div class="mb-3">
+        <p class="text-dark">
+          Already Registered
+          <a type="button" class="btn-link" href="/login">Click here</a>
+          to login.
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

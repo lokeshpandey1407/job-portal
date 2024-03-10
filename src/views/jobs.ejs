@@ -1,0 +1,48 @@
+<div class="jobs-container m-5 d-flex flex-column gap-3 justify-content-center">
+  <div class="d-flex flex-row flex-wrap gap-5 justify-content-center">
+    <% if(jobs.length == 0){ %>
+    <p class="text-info">No jobs here.</p>
+    <% } %>
+    <!-- card start -->
+    <% jobs.map((job)=>{ %>
+    <div class="mb-5">
+      <div
+        class="card bg-transparent text-light border-light"
+        style="width: 20rem"
+      >
+        <div class="card-body d-flex gap-3 flex-column">
+          <span
+            class="p-2 rounded text-light bg-danger"
+            style="width: fit-content"
+            >Actively Hiring <i class="fa-solid fa-chart-line"></i
+          ></span>
+          <h5 class="card-title text-warning"><%= job.company %></h5>
+          <h6 class="card-subtitle mb-2">
+            <%= job.role%> <span class="text-info"><%= job.profile %></span> -
+            <span><%= job.jobType %></span>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-success">
+            <i class="fa-solid fa-location-dot"></i> <%= job.location%>,
+            <span class=""><%= job.locationType %></span>
+          </h6>
+          <h6 class="card-subtitle mb-2">
+            <i class="fa-solid fa-indian-rupee-sign"></i> <%= job.minSalary%> -
+            <span class=""><%= job.maxSalary %></span> LPA
+          </h6>
+          <div class="d-flex flex-row flex-wrap gap-2">
+            <% job.technologies.map((tech)=>{ %>
+            <span class="py-1 px-2 rounded text-info border border-info skill">
+              <%= tech %>
+            </span>
+            <% }) %>
+          </div>
+          <a href="/job-details/<%= job.id %>" class="btn btn-primary"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+    <!-- card end -->
+  </div>
+</div>

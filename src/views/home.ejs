@@ -1,0 +1,23 @@
+<div
+  class="container-fluid d-flex align-items-center jutify-content-center vh-100 p-5"
+>
+  <div>
+    <h1 class="main-head">A Comprehensive platform for reliable</h1>
+    <h2 class="secondary-head">job opportunities and internships.</h2>
+    <h5 class="text mt-5">Get Discovered. Get Hired.</h5>
+    <div class="container d-flex align-items-center gap-4 mt-5">
+      <a type="button" class="btn btn-primary primary btn-lg" href="/jobs">
+        I'm a Job Seeker
+      </a>
+      <% if(locals.userName){ %>
+      <a type="button" class="btn btn-primary primary btn-lg" href="/jobs">
+        I'm a Recruiter
+      </a>
+      <% }else{ %>
+      <a type="button" class="btn btn-primary primary btn-lg" href="/login">
+        I'm a Recruiter
+      </a>
+      <% } %>
+    </div>
+  </div>
+</div>

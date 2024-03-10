@@ -1,0 +1,28 @@
+<div class="container-fluid mt-5 p-3 rounded">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Resume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% applicants.map((applicant)=>{ %>
+      <tr>
+        <th scope="row"><%= applicant.id %></th>
+        <td><%= applicant.name %></td>
+        <td><%= applicant.email %></td>
+        <td>@<%= applicant.contact %></td>
+        <td>
+          <a class="btn btn-info" href="/<%=applicant.docUrl%>" target="_blank"
+            >View</a
+          >
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
